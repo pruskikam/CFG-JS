@@ -10,6 +10,8 @@ let h1;
 let h2;
 let input;
 let shadow;
+let buttonMore;
+let p;
 
 const paintingInfo = [
 	{ title: 'Self-portrait', surname: 'Rembrandt', year: 1659 },
@@ -29,7 +31,7 @@ const main = () => {
 };
 
 const prepareElements = () => {
-	button = document.querySelector('button');
+	button = document.querySelector('.start');
 	alert = document.querySelector('.alert-info');
 	h2 = document.querySelector('h2');
 	gallery = document.getElementById('gallery');
@@ -40,11 +42,14 @@ const prepareElements = () => {
 	finalScore = document.getElementById('final-score');
 	intro = document.querySelector('.intro');
 	shadow = document.getElementsByClassName('shadow');
+	buttonMore = document.querySelector('.more');
+	p = document.createElement('p');
 };
 
 const prepareEvents = () => {
 	button.addEventListener('click', startQuiz);
 	input.addEventListener('keyup', checkEnter);
+	buttonMore.addEventListener('click', showMore);
 };
 
 const showName = () => {
@@ -106,17 +111,25 @@ const checkTheAnswer = () => {
 
 const endQuiz = () => {
 	intro.classList.add('hide');
-	h2.innerText = `your score is: ${score}/8`;
+	h2.innerText = `your score is: ${score}/8. Would you like to learn more about these artworks? If the answer is yes, click the button below`;
+	moreButton();
+};
 
+moreButton = () => {
+	buttonMore.style.display = 'flex';
+};
+
+showMore = () => {
 	for (i = 0, all = shadow.length; i < all; i++) {
 		shadow[i].classList.add('show');
-		// setTimeout(rightSwipe, 1500);
+
+		shadow[
+			i
+		].innerText = `${paintingInfo[i].surname}, ${paintingInfo[i].title}, ${paintingInfo[i].year}`;
 	}
+
+	const noAnswerAlert = () => {
+		alert.innerText = 'You need to put the surname first!';
+	};
 };
-
-
-const noAnswerAlert = () => {
-	alert.innerText = 'You need to put the surname first!';
-};
-
 document.addEventListener('DOMContentLoaded', main);
