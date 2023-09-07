@@ -30,6 +30,10 @@ body {
 	row-gap: 20px;
 }
 
+h2{
+	font-size: 30px;
+}
+
 .intro {
 	padding-top: 15px;
 	margin: 10px;
@@ -80,13 +84,18 @@ input[type='text'] {
 
 .shadow {
 	position: absolute;
-	background-color: green;
+	background-color:rgba(0, 0, 0, 0.7);
 	background-size: cover;
-	width: 230px;
-	left: -18px;
+	width: 200px;
+	left: -15px;
 	height: 250px;
 	bottom: 0;
 	visibility: hidden;
+	font-size: 20px;
+	justify-content: center;
+	color: white;
+	justify-content: right;
+
 }
 
 .one {
@@ -139,7 +148,7 @@ button {
 
 .show {
 	visibility: visible;
-	animation: right 9s forwards;
+	animation: right 6s forwards;
 }
 
 .hide {
@@ -150,12 +159,25 @@ button {
 	animation: up 3s forwards;
 }
 
-/* .right {
-	animation: right 10s forwards;
-} */
+.more {
+	width: 100px;
+	height: 25px;
+	background-color: yellow;
+	display: none;
+}
+
+
+.welcome {
+	display: flex;
+	flex-direction: column;
+}
+
+.more {
+	margin:50px;
+}
 
 p final-score {
-	font-size: 78px;
+	font-size: 50px;
 }
 
 @keyframes right {
