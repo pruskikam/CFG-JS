@@ -1,0 +1,178 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: white;
+	background-color: grey;
+}
+
+.gallery {
+	width: 1000px;
+	height: 600px;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	gap: 20px;
+	position: relative;
+	z-index: 10;
+	row-gap: 20px;
+}
+
+.intro {
+	padding-top: 15px;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 600px;
+	height: 200px;
+	background-color: yellow;
+	position: relative;
+}
+
+.intro p {
+	justify-content: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+input[type='text'] {
+	padding: 10px;
+	margin: 5px 0;
+}
+
+.alert-info {
+	height: 10px;
+	font-size: 11px;
+	background-color: pink;
+}
+
+.painting {
+	width: 200px;
+	height: 250px;
+	border: 1px solid white;
+	margin-top: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.curtain {
+	position: absolute;
+	background-image: url(./curtains.png);
+	background-size: cover;
+	width: 230px;
+	left: -18px;
+	height: 250px;
+	bottom: 0;
+}
+
+.shadow {
+	position: absolute;
+	background-color: green;
+	background-size: cover;
+	width: 230px;
+	left: -18px;
+	height: 250px;
+	bottom: 0;
+	visibility: hidden;
+}
+
+.one {
+	background-image: url(https://cdn.britannica.com/82/190482-050-33D2C4C5/Self-Portrait-canvas-Rembrandt-van-Rijn-Washington-DC.jpg);
+	background-size: cover;
+}
+
+.two {
+	background-image: url(https://darksky.org/app/uploads/2015/11/StarryNight.jpg);
+	background-size: cover;
+}
+
+.three {
+	background-image: url(https://artincontext.org/wp-content/uploads/2021/09/The-Birth-of-Venus-Botticelli-848x530.jpg);
+	background-size: cover;
+	background-position: 50%;
+}
+
+.four {
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg/600px-Nighthawks_by_Edward_Hopper_1942.jpg);
+	background-size: cover;
+	background-position: 50%;
+}
+
+.five {
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg);
+	background-size: cover;
+}
+
+.six {
+	background-image: url(https://d7hftxdivxxvm.cloudfront.net/?height=630&quality=80&resize_to=fill&src=https%3A%2F%2Fartsy-media-uploads.s3.amazonaws.com%2F1hk-BlIJ8CXvagH8tH0Dsg%252Fcustom-image%2B14.jpeg&width=1200);
+	background-size: cover;
+}
+
+.seven {
+	background-image: url(https://img.kingandmcgaw.com/imagecache/4/3/si-436740.jpg_maxdim-1000_resize-yes.jpg);
+	background-size: cover;
+}
+
+.eight {
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/600px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg);
+	background-size: cover;
+}
+
+button {
+	width: 100px;
+	height: 20px;
+	background-color: pink;
+}
+
+.show {
+	visibility: visible;
+	animation: right 9s forwards;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+.curtain-up {
+	animation: up 3s forwards;
+}
+
+/* .right {
+	animation: right 10s forwards;
+} */
+
+p final-score {
+	font-size: 78px;
+}
+
+@keyframes right {
+	0% {
+		left: -400px;
+	}
+
+	100% {
+		left: 0px;
+	}
+}
+@keyframes up {
+	0% {
+		bottom: 0;
+	}
+
+	100% {
+		bottom: 300px;
+	}
+}
