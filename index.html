@@ -6,21 +6,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&family=Lobster&family=Merriweather&family=Montserrat:wght@200;400&family=Nunito&family=Roboto+Mono&family=Syne&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<h1 class="header">Art quiz!</h1>
-		<h2 class="header"></h2>
+		<div class="welcome">
+			<h1>Art quiz!</h1>
+			<h2></h2>
+		</div>
+		<button class="more">click!</button>
 
 		<div class="intro">
 			<div class="popup" id="popup"><p id="final-score"></p></div>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ad
-				optio, cupiditate obcaecati deleniti itaque? Et commodi quas magni
-				facere aut accusantium architecto voluptas itaque! Perspiciatis deleniti
-				atque sunt laborum.
-			</p>
+			<p>1. press START</p>
+			<p>2. Guess the surname of the artist and put it in the box below</p>
+			<p>2. Press 'enter'</p>
 
-			<button>start</button>
+			<button class="start">start</button>
 			<p class="alert-info"></p>
 			<input
 				type="text"
