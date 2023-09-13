@@ -28,12 +28,14 @@ const main = () => {
 	prepareElements();
 	prepareEvents();
 	showName();
+	console.log('Here is my console.log message!');
 };
 
 const prepareElements = () => {
 	button = document.querySelector('.start');
-	alert = document.querySelector('.alert-info');
+	alertInfo = document.querySelector('.alert-info');
 	h2 = document.querySelector('h2');
+	h1 = document.querySelector('h1');
 	gallery = document.getElementById('gallery');
 	paintings = document.getElementsByClassName('painting');
 	curtains = document.getElementsByClassName('curtain');
@@ -43,7 +45,7 @@ const prepareElements = () => {
 	intro = document.querySelector('.intro');
 	shadow = document.getElementsByClassName('shadow');
 	buttonMore = document.querySelector('.more');
-	p = document.createElement('p');
+	welcome = document.querySelector('.welcome');
 };
 
 const prepareEvents = () => {
@@ -78,7 +80,8 @@ const checkInput = () => {
 		checkTheAnswer();
 	}
 	if (input.value === '') {
-		//wyswietl wiadomosc!!!!!!!!!
+		noAnswerAlert();
+		setTimeout(checkInput, 1000);
 	}
 };
 
@@ -109,14 +112,21 @@ const checkTheAnswer = () => {
 	}
 };
 
+const endAlert = () => {
+	alert((value = 'That was the last question!'), location.hostname);
+};
+
 const endQuiz = () => {
-	intro.classList.add('hide');
-	h2.innerText = `your score is: ${score}/8. Would you like to learn more about these artworks? If the answer is yes, click the button below`;
+	endAlert();
+	intro.classList.add('hide-intro');
+	h2.innerText = `your score is: ${score}/8`;
+	h1.classList.add('hide');
 	moreButton();
+	hideTheRest();
 };
 
 moreButton = () => {
-	buttonMore.style.display = 'flex';
+	buttonMore.style.display = 'block';
 };
 
 showMore = () => {
@@ -127,9 +137,23 @@ showMore = () => {
 			i
 		].innerText = `${paintingInfo[i].surname}, ${paintingInfo[i].title}, ${paintingInfo[i].year}`;
 	}
-
-	const noAnswerAlert = () => {
-		alert.innerText = 'You need to put the surname first!';
-	};
 };
+
+const noAnswerAlert = () => {
+	alertInfo.innerText = 'You need to enter the surname first!';
+	setTimeout(clearAnswerAlert, 1000);
+};
+
+const clearAnswerAlert = () => {
+	alertInfo.innerText = '';
+};
+
+const hideTheRest = () => {
+	intro.classList.add('end');
+	const headerThree = document.createElement('h3');
+	welcome.appendChild(headerThree);
+	headerThree.textContent =
+		'if you would like to learn more about the artworks, click the button below';
+};
+
 document.addEventListener('DOMContentLoaded', main);
