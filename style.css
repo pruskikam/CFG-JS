@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -9,47 +10,57 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	min-height: 100vh;
-	font-family: 'Montserrat', sans-serif;
+	min-height: 110vh;
 	background-color: white;
-	background-color: grey;
 }
 
 .gallery {
-	width: 1000px;
+	width: 1100px;
 	height: 600px;
 	background-color: white;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
-	column-gap: 20px;
-	gap: 20px;
+	column-gap: 25px;
+	gap: 25px;
 	position: relative;
 	z-index: 10;
 	row-gap: 20px;
+	border: double 10px rgb(233, 220, 202);
 }
 
-h2{
+h1 {
 	font-size: 30px;
+	text-align: center;
+	color: rgb(85, 7, 8);
+}
+
+h2 {
+	font-size: 25px;
+	text-align: center;
+}
+
+h3 {
+	font-size: 20px;
+	display: block;
 }
 
 .intro {
-	padding-top: 15px;
-	margin: 10px;
+	padding-top: 10px;
+	margin: 15px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 600px;
-	height: 200px;
-	background-color: yellow;
-	position: relative;
+	background-color: transparent;
+	border: 10px double rgb(233, 220, 202);
 }
 
 .intro p {
-	justify-content: center;
 	margin-left: 10px;
 	margin-right: 10px;
+	font-size: 15px;
+	line-height: 20px;
 }
 
 input[type='text'] {
@@ -58,9 +69,10 @@ input[type='text'] {
 }
 
 .alert-info {
-	height: 10px;
-	font-size: 11px;
-	background-color: pink;
+	line-height: 15px;
+	font-size: 9px;
+	background-color: transparent;
+	
 }
 
 .painting {
@@ -84,7 +96,7 @@ input[type='text'] {
 
 .shadow {
 	position: absolute;
-	background-color:rgba(0, 0, 0, 0.7);
+	background-color: rgb(0, 0, 0, 0.8);
 	background-size: cover;
 	width: 200px;
 	left: -15px;
@@ -95,7 +107,6 @@ input[type='text'] {
 	justify-content: center;
 	color: white;
 	justify-content: right;
-
 }
 
 .one {
@@ -140,10 +151,15 @@ input[type='text'] {
 	background-size: cover;
 }
 
-button {
-	width: 100px;
-	height: 20px;
-	background-color: pink;
+.start {
+	width: 130px;
+	height: 30px;
+	border: 0px;
+	font-size: 12px;
+}
+
+.start:hover {
+	background-color: rgba(119, 14, 6, 0.7);
 }
 
 .show {
@@ -160,12 +176,16 @@ button {
 }
 
 .more {
-	width: 100px;
-	height: 25px;
-	background-color: yellow;
+	width: 200px;
+	height: 40px;
 	display: none;
+	transition: color 0.3s;
+	border: 0px;
 }
 
+.more:hover {
+	background-color: rgba(119, 14, 6, 0.7);
+}
 
 .welcome {
 	display: flex;
@@ -173,11 +193,25 @@ button {
 }
 
 .more {
-	margin:50px;
+	margin: 50px;
 }
 
 p final-score {
 	font-size: 50px;
+}
+
+.end {
+	animation: end 2s forwards;
+}
+
+@keyframes end {
+	0% {
+		opacity: 100%;
+	}
+
+	100% {
+		opacity: 0%;
+	}
 }
 
 @keyframes right {
